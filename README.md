@@ -97,8 +97,18 @@ Los detalles del desarrollo del modelo de machine learning están en los archivo
 
 También se encuentra el archivo **main.py** donde está el codigo desarrollado para la creación de la API.
 
+## Deployment
+
+Se hizo el deployment del modelo mediante la API en Render, que es una plataforma con servicio de nube para alojar la información que nosotros hayamos creado y poder ejeccutarla.
+
+Para esto, se creó una cuenta en render y mediante el enlace con github se pudo hacer el deployment en un tiempo corto. 
+
 
 ## Autor:
 
 - [@ingridbarriosv](https://www.github.com/ingridbarriosv)
-Enlace del repositorio:
+
+- [Link de del repositorio]:(https://github.com/ingridbarriosv/PI-MLOps---IB)
+
+- [Link del deployment]:(https://pi-mlops-ib.onrender.com)
+
