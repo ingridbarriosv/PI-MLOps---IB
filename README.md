@@ -103,6 +103,14 @@ Se hizo el deployment del modelo mediante la API en Render, que es una plataform
 
 Para esto, se creó una cuenta en render y mediante el enlace con github se pudo hacer el deployment en un tiempo corto. 
 
+### Enlaces
+
+En los siguientes enlaces se puede ver los complementos del video, el link del deployment y el link del repositorio:
+
+- [Link de del repositorio]:(https://github.com/ingridbarriosv/PI-MLOps---IB)
+
+- [Link del deployment]:(https://pi-mlops-ib.onrender.com)
+
 
 ## Autor:
 
