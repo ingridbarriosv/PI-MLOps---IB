@@ -107,16 +107,16 @@ Para esto, se creó una cuenta en render y mediante el enlace con github se pudo
 
 En los siguientes enlaces se puede ver los complementos del video, el link del deployment y el link del repositorio:
 
-- [Link de del repositorio]:(https://github.com/ingridbarriosv/PI-MLOps---IB)
+- [Link de del repositorio](https://github.com/ingridbarriosv/PI-MLOps---IB)
 
-- [Link del deployment]:(https://pi-mlops-ib.onrender.com)
+- [Link del deployment](https://pi-mlops-ib.onrender.com)
+
+- [Link del video](https://drive.google.com/file/d/1Hpt-FWOG9m_LgTBsXwlqWsiKRUhj0r5I/view)
 
 
 ## Autor:
 
 - [@ingridbarriosv](https://www.github.com/ingridbarriosv)
 
-- [Link de del repositorio]:(https://github.com/ingridbarriosv/PI-MLOps---IB)
 
-- [Link del deployment]:(https://pi-mlops-ib.onrender.com)
 
