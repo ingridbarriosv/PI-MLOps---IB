@@ -1,0 +1,9 @@
+/fastapi-venv
+
+/csv
+
+*.csv
+
+*.json
+
+test.ipynb
