@@ -15,7 +15,7 @@ async def root():
 @app.get("/developer/{dev}")
 def developer(dev:str):
     # Se leen los datos y se crea el dataFrame a partir del dataframe total anteriormente modificado
-    dfGames = pd.read_parquet('../DB Steam/steam_games.parquet')
+    dfGames = pd.read_parquet('DB Steam/steam_games.parquet')
     # Se crea un dataFrame filtrado de acuerdo a la empresa desarrolladora, convirtiendo los str de developer a minusculas
     dfFiltered =  dfGames[dfGames['developer'].str.lower() == dev.lower()]
     # Se guardan los valores del total de juegos y la cantidad de juegos gratuitos agrupados por año
@@ -37,10 +37,10 @@ def developer(dev:str):
 @app.get("/userData/{userId}")
 def userData(userId:str):
     # Se leen los datos y se crean los DataFrames a partir de los formatos parquet que habíamos creado 
-    dfUserRecommend = pd.read_parquet('../DB Steam/Reviews_sep_sentiment.parquet')
-    userItemsDf = pd.read_parquet('../DB Steam/items_sep.parquet')
-    userItemCountDf = pd.read_parquet('../DB Steam/items_count.parquet')
-    dfSteamGamesPrice = pd.read_parquet('../DB Steam/GamesPrice.parquet')
+    dfUserRecommend = pd.read_parquet('DB Steam/Reviews_sep_sentiment.parquet')
+    userItemsDf = pd.read_parquet('DB Steam/items_sep.parquet')
+    userItemCountDf = pd.read_parquet('DB Steam/items_count.parquet')
+    dfSteamGamesPrice = pd.read_parquet('DB Steam/GamesPrice.parquet')
     # Se crean DataFrames filtrados por usuario
     dfUserRecommend =  dfUserRecommend[dfUserRecommend['user_id'] == userId].reset_index(drop = True)
     userItemsDf = userItemsDf[userItemsDf['user_id'] == userId].reset_index(drop = True)
@@ -60,8 +60,8 @@ def userData(userId:str):
 @app.get("/userForGenre/{genre}")
 def userForGenre(genre:str):
     # Se leen los datos y se crea el dataFrame
-    dfSteamGamesGenres = pd.read_parquet('../DB Steam/GamesGenre_sep.parquet')
-    dfUserItems_sep = pd.read_parquet('../DB Steam/items_sep.parquet')
+    dfSteamGamesGenres = pd.read_parquet('DB Steam/GamesGenre_sep.parquet')
+    dfUserItems_sep = pd.read_parquet('DB Steam/items_sep.parquet')
     # Se filtra el dataFrame buscando el género solicitado entre los géneros del juego, pasados a minúsculas
     dfSteamGamesGenres = dfSteamGamesGenres[dfSteamGamesGenres['genres'].str.lower() == genre.lower()]
     # Se combina el dataFrame con los géneros 'dfSteamGamesGenres' al dataFrame que contiene a los usuarios con sus ítems 'dfUserItems_sep'
@@ -82,8 +82,8 @@ def userForGenre(genre:str):
 @app.get("/BestDeveloperYear/{year}")
 def BestDeveloperYear(año:int):
     # Se cargan los datos y se crean los dataFrame
-    dfUserReview = pd.read_parquet('../DB Steam/Reviews_sep_sentiment.parquet')
-    dfGamesBestDev = pd.read_parquet('../DB Steam/GamesDevs.parquet')
+    dfUserReview = pd.read_parquet('DB Steam/Reviews_sep_sentiment.parquet')
+    dfGamesBestDev = pd.read_parquet('DB Steam/GamesDevs.parquet')
     # Se filtra el dataFrame de acuerdo al año solicitado, descartando los juegos no recomendados, y con análisis de sentimiento neutral o negativo
     dfUserReview = dfUserReview[(dfUserReview['recommend'] == True) & 
                                             (dfUserReview['sentiment_analysis'] == '2') & 
@@ -108,8 +108,8 @@ def BestDeveloperYear(año:int):
 @app.get("/DeveloperReviewsAnalysis/{dev}")
 def DeveloperReviewsAnalysis(dev:str):
     # Se cargan los datos y se crean los DataFrame
-    dfUserReview = pd.read_parquet('../DB Steam/Reviews_sep_sentiment.parquet')
-    dfGamesDev = pd.read_parquet('../DB Steam/GamesDevs.parquet')
+    dfUserReview = pd.read_parquet('DB Steam/Reviews_sep_sentiment.parquet')
+    dfGamesDev = pd.read_parquet('DB Steam/GamesDevs.parquet')
     # Se filtra el DataFrame de desarrolladores de acuerdo al desarrollador solicitado
     dfGamesDev = dfGamesDev[dfGamesDev['developer'].str.lower() == dev.lower()]
     # Se agrupa el DataFrame de reseñas de acuerdo al ID del juego agregando una columna para la suma de comentarios positivos y otra para la de negativos
@@ -126,7 +126,7 @@ def DeveloperReviewsAnalysis(dev:str):
 @app.get("/recommenditem/{itemId}")
 def RecommendItem(itemId: str):
     # Se cargan los datos y se crea el dataFrame
-    dfItemSim = pd.read_parquet('../DB Steam/item_Sim.parquet')
+    dfItemSim = pd.read_parquet('DB Steam/item_Sim.parquet')
     counter = 1
     resultRecomm = {'Aquí hay juegos similares a': itemId,'1':'','2':'','3':'','4':'','5':''}
     # Se buscan los ítems con mayor similitud y se añaden al resultado
